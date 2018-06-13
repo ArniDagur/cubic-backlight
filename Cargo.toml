@@ -1,7 +1,7 @@
 [package]
-name = "cubiclight"
+name = "cubic-backlight"
 version = "0.1.0"
-authors = ["Árni Dagur <19227577+ArniDagur@users.noreply.github.com>"]
+authors = ["Árni Dagur <arni@dagur.eu>"]
 
 [dependencies]
 clap = "2"

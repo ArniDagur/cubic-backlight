@@ -3,8 +3,8 @@ use clap::{Arg, App};
 use std::process::Command;
 
 fn main() {
-    let args = App::new("cubiclight")
-                  .version("1.0")
+    let args = App::new("cubic-backlight")
+                  .version("0.1.0")
                   .author("Árni Dagur <arni@dagur.eu>")
                   .arg(Arg::with_name("N")
                        .short("N")
