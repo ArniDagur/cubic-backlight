@@ -1,5 +1,5 @@
 extern crate clap;
-use clap::{Arg, App};
+use clap::{Arg, App, ArgGroup};
 use std::process::Command;
 
 fn main() {
@@ -8,21 +8,21 @@ fn main() {
                   .author("Árni Dagur <arni@dagur.eu>")
                   .arg(Arg::with_name("N")
                        .short("N")
-                       .value_name("INT")
+                       .value_name("NUM")
                        .help("Number of steps")
                        .default_value("10")
                        .takes_value(true))
                   .arg(Arg::with_name("inc")
                        .short("i")
                        .long("inc")
-                       .help("Increase brightness")
-                       .conflicts_with("dec")
-                       .required(true))
+                       .help("Increase brightness"))
                   .arg(Arg::with_name("dec")
                        .short("d")
                        .long("dec")
-                       .help("Decrease brightness")
-                       .conflicts_with("inc")
+                       .help("Decrease brightness"))
+                  .group(ArgGroup::with_name("operator")
+                       .arg("inc")
+                       .arg("dec")
                        .required(true))
                   .arg(Arg::with_name("min")
                        .short("m")
