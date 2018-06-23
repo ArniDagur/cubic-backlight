@@ -85,5 +85,6 @@ fn main() {
     Command::new("xbacklight")
         .arg("-set")
         .arg(&nb.to_string())
-        .spawn();
+        .spawn()
+        .expect("failed to execute process");
 }
